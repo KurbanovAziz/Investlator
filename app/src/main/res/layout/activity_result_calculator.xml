@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_main"
+    tools:context=".calculator.result.ResultCalculatorActivity">
+
+    <TextView
+        android:id="@+id/tv_calculator"
+        style="@style/Text.Header"
+        android:drawablePadding="16dp"
+        android:text="@string/calculator"
+        app:drawableStartCompat="@drawable/ic_calculator_black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <GridLayout
+        android:id="@+id/layout_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:padding="8dp"
+        android:layout_marginTop="32dp"
+        android:alignmentMode="alignMargins"
+        android:columnCount="2"
+        android:columnOrderPreserved="false"
+        android:rowCount="2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_calculator">
+
+        <LinearLayout
+            android:id="@+id/layout_current"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:layout_marginEnd="12dp"
+            android:background="@drawable/restangle"
+            android:orientation="vertical"
+            android:paddingVertical="16dp"
+            android:paddingHorizontal="12dp"
+            >
+
+            <TextView
+                android:id="@+id/tv_current"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/Text.Main"
+                android:lines="1"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                android:text="@string/_100" />
+
+            <TextView
+                style="@style/Text.Desc"
+                android:textSize="12sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/current_c_u"
+                android:layout_marginTop="4dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_gravity="end"
+            android:id="@+id/layout_investment"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/restangle"
+            android:orientation="vertical"
+            android:paddingVertical="16dp"
+            android:paddingHorizontal="12dp"
+            tools:ignore="RtlSymmetry">
+
+            <TextView
+                android:id="@+id/tv_investment"
+                android:lines="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/Text.Main"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                android:text="@string/_100" />
+
+            <TextView
+                style="@style/Text.Desc"
+                android:textSize="12sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/investment_c_u"
+                android:layout_marginTop="4dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_profit"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/restangle"
+            android:orientation="vertical"
+            android:paddingVertical="16dp"
+            android:paddingHorizontal="12dp"
+            >
+
+            <TextView
+                android:id="@+id/tv_profit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/Text.Main"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                android:lines="1"
+                android:text="@string/_100" />
+
+            <TextView
+                style="@style/Text.Desc"
+                android:textSize="12sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/profit"
+                android:layout_marginTop="4dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_gravity="end"
+            android:id="@+id/layout_profit_c_u"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/restangle"
+            android:orientation="vertical"
+            android:paddingVertical="16dp"
+            android:paddingHorizontal="12dp"
+            >
+
+            <TextView
+                android:id="@+id/tv_profit_c_u"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/Text.Main"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                android:lines="1"
+                android:text="@string/_100" />
+
+            <TextView
+                style="@style/Text.Desc"
+                android:textSize="12sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/profit_c_u"
+                android:layout_marginTop="4dp"/>
+        </LinearLayout>
+
+    </GridLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_graph"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:background="@drawable/restangle"
+        android:orientation="vertical"
+        android:padding="26dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layout_result">
+
+
+        <ImageView
+            android:id="@+id/iv_invest"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_investment" />
+
+        <TextView
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_invest"
+            android:id="@+id/your_profit_tv"
+            style="@style/Text.Main"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/your_profit"
+            android:textColor="@color/white"
+            android:textSize="26sp" />
+
+        <com.github.mikephil.charting.charts.LineChart
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/your_profit_tv"
+            android:id="@+id/chart"
+            android:scrollbars="horizontal|vertical"
+            android:overScrollMode="never"
+            android:layout_width="match_parent"
+            android:layout_height="170dp"
+            android:layout_marginTop="32dp"
+            android:layout_weight="1" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_menu"
+        style="@style/Button"
+        android:layout_marginVertical="32dp"
+        android:backgroundTint="@color/black"
+        android:padding="16dp"
+        android:text="@string/menu"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/layout_graph"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

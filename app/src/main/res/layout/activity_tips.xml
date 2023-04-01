@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_main"
+    tools:context=".tips.TipsActivity">
+
+    <TextView
+        android:id="@+id/tv_tips"
+        style="@style/Text.Header"
+        android:drawablePadding="16dp"
+        android:text="@string/tips"
+        app:drawableStartCompat="@drawable/ic_tips_black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="12dp"
+        android:layout_marginVertical="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_tips">
+
+        <LinearLayout
+            android:id="@+id/layout_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_tips">
+
+            <LinearLayout
+                android:id="@+id/layout_monthly"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:background="@drawable/restangle"
+                android:orientation="vertical"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="26dp">
+
+                <ImageView
+                    style="@style/Text.Main"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/tips"
+                    android:padding="14dp"
+                    android:src="@drawable/ic_m" />
+
+                <TextView
+                    style="@style/Text.Tips"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/monthly_invest" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_profit"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:layout_marginVertical="26dp"
+                android:background="@drawable/restangle"
+                android:orientation="vertical"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="26dp">
+
+                <ImageView
+                    style="@style/Text.Main"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/tips"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_profit" />
+
+                <TextView
+                    style="@style/Text.Tips"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/your_profit_graphic"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_simple"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:background="@drawable/restangle"
+                android:orientation="vertical"
+                android:paddingVertical="26dp"
+                android:paddingStart="26dp"
+                android:paddingEnd="56dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/layout_profit">
+
+                <ImageView
+                    style="@style/Text.Main"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/tips"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="14dp"
+                    android:src="@drawable/ic_s" />
+
+                <TextView
+                    style="@style/Text.Tips"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/simple" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginVertical="32dp"
+        android:layout_marginHorizontal="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_tips">
+
+        <LinearLayout
+            android:id="@+id/layout_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_tips">
+
+            <LinearLayout
+                android:id="@+id/layout_year"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:background="@drawable/restangle"
+                android:orientation="vertical"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="26dp">
+
+                <ImageView
+                    style="@style/Text.Main"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/tips"
+                    android:padding="14dp"
+                    android:src="@drawable/ic_y" />
+
+                <TextView
+                    style="@style/Text.Tips"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/yearly_invest"
+                    android:textAlignment="textStart" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_risk"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:layout_marginVertical="26dp"
+                android:background="@drawable/restangle"
+                android:orientation="vertical"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="26dp">
+
+                <ImageView
+                    style="@style/Text.Main"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/tips"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_risk" />
+
+                <TextView
+                    style="@style/Text.Tips"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/risk_investment"
+                     />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_compound"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:background="@drawable/restangle"
+                android:orientation="vertical"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="26dp">
+
+                <ImageView
+                    style="@style/Text.Main"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/tips"
+                    android:padding="14dp"
+                    android:src="@drawable/ic_c" />
+
+                <TextView
+                    style="@style/Text.Tips"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/compound"
+                    android:textAlignment="textStart" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
