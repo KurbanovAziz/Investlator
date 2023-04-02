@@ -22,18 +22,17 @@ class BetaActivity : AppCompatActivity() {
         sharedPreferences = Pref(this)
         initClickers()
 
-        if (sharedPreferences.isAuthSeen()){
+        if (sharedPreferences.isAuthSeen()) {
             Intent(this, MenuActivity::class.java).apply {
                 startActivity(this)
                 finish()
             }
         }
-
     }
 
     private fun initClickers() {
         binding.btnRegister.setOnClickListener {
-            Intent(this,RegistrationNameActivity::class.java).apply {
+            Intent(this, RegistrationNameActivity::class.java).apply {
                 startActivity(this)
             }
         }

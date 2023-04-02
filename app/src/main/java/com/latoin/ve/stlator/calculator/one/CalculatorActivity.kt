@@ -1,6 +1,6 @@
 package com.latoin.ve.stlator.calculator.one
 
-import CalculatorViewModel
+import com.latoin.ve.stlator.calculator.one.calculatorViewModel.CalculatorViewModel
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -13,11 +13,11 @@ import com.latoin.ve.stlator.calculator.two.CalculateTwoActivity
 import com.latoin.ve.stlator.databinding.ActivityCalculatorBinding
 import com.latoin.ve.stlator.ext.showToast
 
+@Suppress("DEPRECATION")
 class CalculatorActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityCalculatorBinding
     private lateinit var viewModel: CalculatorViewModel
-    private var period = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,32 +30,16 @@ class CalculatorActivity : AppCompatActivity() {
     }
 
     private fun initListener() {
-        binding.btnY.setOnClickListener {
-            viewModel.setSelectedButtonId(R.id.btn_y)
-            binding.btnY.setTextColor(ContextCompat.getColor(this, R.color.black))
-            binding.btnY.setBackgroundResource(R.drawable.radio_btn_selected)
-            binding.btnM.setTextColor(ContextCompat.getColor(this, R.color.white))
-            binding.btnM.setBackgroundResource(R.drawable.radio_btn)
-        }
-
-        binding.btnM.setOnClickListener {
-            viewModel.setSelectedButtonId(R.id.btn_m)
-            binding.btnM.setTextColor(ContextCompat.getColor(this, R.color.black))
-            binding.btnM.setBackgroundResource(R.drawable.radio_btn_selected)
-            binding.btnY.setTextColor(ContextCompat.getColor(this, R.color.white))
-            binding.btnY.setBackgroundResource(R.drawable.radio_btn)
-        }
+        radioButton()
 
         binding.btnNext.setOnClickListener {
             if (binding.edInvestment.text.toString().isNotEmpty() && binding.edPeriod.text.toString().isNotEmpty()) {
+
                 viewModel.setInvestment(binding.edInvestment.text.toString().toDouble())
                 viewModel.setPeriod(binding.edPeriod.text.toString().toInt())
 
-                Intent(this, CalculateTwoActivity::class.java).apply {
-                    putExtra("investment", viewModel.calculateInvestmentResult())
-                    putExtra("period", viewModel.calculatePeriodInDays())
-                    startActivity(this)
-                }
+                navigateTo()
+
             } else {
                 showToast(getString(R.string.all_fields_must_be_filled))
             }
@@ -76,28 +60,31 @@ class CalculatorActivity : AppCompatActivity() {
             selectedButton = view as Button
             selectedButton?.setTextColor(ContextCompat.getColor(this, R.color.black))
             selectedButton?.setBackgroundResource(R.drawable.radio_btn_selected)
-            period *= if (selectedButton == binding.btnY) {
-                365
-            } else {
-                30
-            }
+
         }
+
+        selectedButton = binding.btnY
+        selectedButton?.setTextColor(ContextCompat.getColor(this, R.color.black))
+        selectedButton?.setBackgroundResource(R.drawable.radio_btn_selected)
+
 
         for (button in radioButtons) {
             button.setOnClickListener { onRadioButtonClicked(it) }
         }
+    }
 
-        when (selectedButton) {
-            binding.btnY -> {
-                period *= 365
-            }
-            binding.btnM -> {
-                period *= 365
-            }
-            else -> {
-                // Ни один элемент не выбран
-            }
+    private fun navigateTo() {
+        Intent(this, CalculateTwoActivity::class.java).apply {
+            putExtra(KEY_INVESTMENT, viewModel.calculateInvestmentResult())
+            putExtra(KEY_PERIOD_ONE, viewModel.calculatePeriodInDays())
+            startActivity(this)
+            onBackPressed()
         }
+    }
+
+    companion object{
+        const val KEY_INVESTMENT = "investment"
+        const val KEY_PERIOD_ONE = "period"
     }
 
 }

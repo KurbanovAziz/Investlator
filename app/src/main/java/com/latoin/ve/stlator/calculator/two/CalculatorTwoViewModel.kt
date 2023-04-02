@@ -1,9 +1,9 @@
 package com.latoin.ve.stlator.calculator.two
+
 import androidx.lifecycle.ViewModel
 import kotlin.math.pow
 
 class CalculatorTwoViewModel : ViewModel() {
-
 
     var investment: Double = 0.0
     var period: Int = 0
@@ -11,13 +11,12 @@ class CalculatorTwoViewModel : ViewModel() {
     var percent: Double = 0.0
 
     fun calculateCompoundInterest(): Double {
-        val decimalPercent = percent / 100.0
-        val compoundInterest = investment * (1.0 + decimalPercent).pow(period.toDouble())
-        return compoundInterest - investment
+        val decimalPercent = percent / 100
+        return investment * (1 + decimalPercent).pow(period)
     }
 
     fun calculateSimpleInterest(): Double {
-        val decimalPercent = percent / 100.0
+        val decimalPercent = percent / 100
         return investment * decimalPercent * period
     }
 

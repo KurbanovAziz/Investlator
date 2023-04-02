@@ -26,7 +26,7 @@ class RegistrationPhoneActivity : AppCompatActivity() {
         phoneNumberUtil = PhoneNumberUtil.createInstance(this)
 
         initClickers()
-        if (sharedPreferences.isAuthSeen()){
+        if (sharedPreferences.isAuthSeen()) {
             goToMenu()
             finish()
         }

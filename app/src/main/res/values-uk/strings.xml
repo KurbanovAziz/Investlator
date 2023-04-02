@@ -45,4 +45,8 @@
     <string name="your_profit">Ваш прибуток</string>
     <string name="all_fields_must_be_filled">Усі поля мають бути заповнені!</string>
     <string name="check_if_the_number_is_correct">Перевірте правильність номера</string>
+    <string name="profit_text">%s%%</string>
+    <string name="profit_cu_text">%s$</string>
+    <string name="investment_text">%s$</string>
+    <string name="current_text">%s$</string>
 </resources>

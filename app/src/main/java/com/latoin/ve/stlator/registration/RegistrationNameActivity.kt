@@ -25,7 +25,6 @@ class RegistrationNameActivity : AppCompatActivity() {
                 Intent(this, RegistrationPhoneActivity::class.java).apply {
                     startActivity(this)
                 }
-
             } else {
                 showToast(getString(R.string.enter_your_name))
             }

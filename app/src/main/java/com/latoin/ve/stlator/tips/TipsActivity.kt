@@ -3,7 +3,6 @@ package com.latoin.ve.stlator.tips
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.latoin.ve.stlator.databinding.ActivityTipsBinding
-import java.util.concurrent.atomic.AtomicBoolean
 
 class TipsActivity : AppCompatActivity() {
     

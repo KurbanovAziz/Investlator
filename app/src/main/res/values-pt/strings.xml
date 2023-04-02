@@ -45,5 +45,9 @@
     <string name="your_profit">Seu lucro</string>
     <string name="all_fields_must_be_filled">Todos os campos devem ser preenchidos!</string>
     <string name="check_if_the_number_is_correct">Verifique se o número está correto</string>
+    <string name="profit_text">%s%%</string>
+    <string name="profit_cu_text">%s$</string>
+    <string name="investment_text">%s$</string>
+    <string name="current_text">%s$</string>
 
 </resources>

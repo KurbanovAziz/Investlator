@@ -45,4 +45,8 @@
     <string name="your_profit">Your Profit</string>
     <string name="all_fields_must_be_filled">All fields must be filled!</string>
     <string name="check_if_the_number_is_correct">Check if the number is correct</string>
+    <string name="profit_text">%s%%</string>
+    <string name="profit_cu_text">%s$</string>
+    <string name="investment_text">%s$</string>
+    <string name="current_text">%s$</string>
 </resources>

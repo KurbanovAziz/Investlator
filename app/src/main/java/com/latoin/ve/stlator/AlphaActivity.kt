@@ -42,7 +42,7 @@ class AlphaActivity : AppCompatActivity() {
 
     private fun toMainActivity() {
         ioScope.launch {
-            delay(3000) 
+            delay(3000)
             uiScope.launch {
                 startActivity(Intent(this@AlphaActivity, BetaActivity::class.java))
                 finish()

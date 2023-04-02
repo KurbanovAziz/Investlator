@@ -48,9 +48,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 style="@style/Text.Main"
-                android:lines="1"
+                android:singleLine="true"
+                android:ellipsize="marquee"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:scrollHorizontally="true"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
                 android:textColor="@color/white"
-                android:textSize="24sp"
+                android:textSize="32sp"
                 android:text="@string/_100" />
 
             <TextView
@@ -71,16 +76,21 @@
             android:orientation="vertical"
             android:paddingVertical="16dp"
             android:paddingHorizontal="12dp"
-            tools:ignore="RtlSymmetry">
+            >
 
             <TextView
                 android:id="@+id/tv_investment"
-                android:lines="1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 style="@style/Text.Main"
+                android:singleLine="true"
+                android:ellipsize="marquee"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:scrollHorizontally="true"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
                 android:textColor="@color/white"
-                android:textSize="24sp"
+                android:textSize="32sp"
                 android:text="@string/_100" />
 
             <TextView
@@ -107,9 +117,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 style="@style/Text.Main"
+                android:singleLine="true"
+                android:ellipsize="marquee"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:scrollHorizontally="true"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
                 android:textColor="@color/white"
-                android:textSize="24sp"
-                android:lines="1"
+                android:textSize="32sp"
                 android:text="@string/_100" />
 
             <TextView
@@ -137,9 +152,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 style="@style/Text.Main"
+                android:singleLine="true"
+                android:ellipsize="marquee"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:scrollHorizontally="true"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
                 android:textColor="@color/white"
-                android:textSize="24sp"
-                android:lines="1"
+                android:textSize="32sp"
                 android:text="@string/_100" />
 
             <TextView
@@ -197,7 +217,7 @@
             android:overScrollMode="never"
             android:layout_width="match_parent"
             android:layout_height="170dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="22dp"
             android:layout_weight="1" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 

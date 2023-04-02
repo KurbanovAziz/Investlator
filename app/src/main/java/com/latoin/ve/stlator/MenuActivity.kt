@@ -34,9 +34,7 @@ class MenuActivity : AppCompatActivity() {
             val supportIntent = Intent(this, SupportActivity::class.java)
             startActivity(supportIntent)
         }
-        binding.btnLogout.setOnClickListener {
-            finish()
-        }
+        binding.btnLogout.setOnClickListener { onDestroy() }
         binding.btnPrivacy.setOnClickListener {
             val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com/"))
             startActivity(browserIntent)
